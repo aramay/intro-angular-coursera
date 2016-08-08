@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- configure page to become angular app, add 'ng-app' DIRECTIVE-->
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Ristorante Con Fusion: Menu</title>
+        <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Add data using ng-init DIRECTIVE-->
+        <div class="row row-content"
+            ng-init="
+            dishes=[{
+                name: 'pizza',
+                image: 'images/uthapizza.png',
+                category: 'mains',
+                label: 'Hot',
+                price: '4.99',
+                description: 'Good indian pizza',
+                comment: ''
+            },
+            {
+                name: 'pizza',
+                image: 'images/uthapizza.png',
+                category: 'mains',
+                label: 'Hot',
+                price: '4.99',
+                description: 'Good indian pizza',
+                comment: ''
+            },
+            {
+                name: 'pizza',
+                image: 'images/uthapizza.png',
+                category: 'mains',
+                label: 'Hot',
+                price: '4.99',
+                description: 'Good indian pizza',
+                comment: ''
+            },
+            {
+                name: 'pizza',
+                image: 'images/uthapizza.png',
+                category: 'mains',
+                label: 'Hot',
+                price: '4.99',
+                description: 'Good indian pizza',
+                comment: ''
+            }]">
+            <div class="col-xs-12">
+                <div class="media" ng-repeat="dish in dishes">
+                    <p>
+                        {{console.log(dish)}}
+                    </p>
+                  <div class="media-left media-middle">
+                      <a href="">
+                          <!-- ng-model DIRECTIVE allows two way data binding -->
+                        <img class="media-object img-thumbnail" ng-src="{{dish.image}}" alt="pizza">
+                      </a>
+
+                  <div class="media-body">
+                    <h4 class="media-heading">{{dish.name}}</h4>
+                    <span class="label label-danger label-xs">{{dish.label}}</span>
+                    <span class="badge">{{dish.price | currency}}</span>
+
+                    <p>
+                        {{dish.description}}
+                    </p>
+                    <p>
+                        Comment: {{dish.comment}}
+                    </p>
+                    <p>
+                        Type your comment:
+                        <input type="text" ng-model="dish.comment">
+                    </p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- import angular js script files -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+</body>
+
+</html>
